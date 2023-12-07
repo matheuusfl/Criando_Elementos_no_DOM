@@ -18,22 +18,26 @@ const arrayPostagens = [
       texto: "Todos conhecemos e amamos um bom churrasco, mas o que você acha de experimentar um churrasco focado em frutos do mar? Nós gostamos, experimente e nos conte o que você achou!"
     },
   ]
-  
+  console.log(arrayPostagens[1])
 
+
+
+for(let i = 0; i < arrayPostagens.length; i++){
 // Criar um elemento
-let article = document.createElement("article")
+  let article = document.createElement("article")
 
 
 
 // Manipular o elemento
-article.innerHTML = `
-<h3>Pop Vegan</h3>
-<p class="subtitulo">Comida vegana para todos!</p>
-<div class="data">06/07/2022</div>
-<p>Restauranre em Consolação com comida por kilo no almoço e rodízio de pizzas à noite, tudo 100% vegano. Vale muito a pena conhecer :)</p>
-`
-console.log(article)
+  article.innerHTML = `
+  <h3>${arrayPostagens[i].titulo}</h3>
+  <p class="subtitulo">${arrayPostagens[i].subtitulo}</p>
+  <div class="data">${arrayPostagens[i].data}</div>
+  <p>${arrayPostagens[i].texto}</p>
+  `
+article.id = `post-${i + 1}`
 
 // Adicionar elemento na pagina
-let main = document.querySelector("main")
-main.appendChild(article)
+  let main = document.querySelector("main")
+  main.appendChild(article)
+}
